@@ -67,6 +67,8 @@ In order to select an occupancy threshold and save the resulting mesh as a 3D `.
 ## Repository structure
 
     .
+    ├── docs
+    │   └── report.pdf                                          # The project report.
     ├── input
     │   ├── images                                              # Directory containing the images of the toy dinosaur.
     │   └── dino_Ps.mat                                         # The perspective Projection Matrices of the images of the toy dnosaur.
