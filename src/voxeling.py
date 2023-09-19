@@ -167,12 +167,7 @@ def get_voxel_points_projection_is_in_images_mask(
     for ppm, img in zip(ppms, images_masks):
         # Get the image width and height.
         image_width, image_height = img.shape[1], img.shape[0]
-        # Compute the homogeneous pixel coordinates of the points
-        points_2d = ppm @ voxel_points
-        # Divide by the third value to get the pixel coordinate
-        points_2d /= points_2d[-1, :]
-        # Convert the point coordinates to integer
-        points_2d = np.round(points_2d).astype(int)
+        points_2d = get_pixel_points(ppm, voxel_points)
         # Get an array tracking whether each voxel point is inside the image
         # or not.
         x_in_image = np.logical_and(
